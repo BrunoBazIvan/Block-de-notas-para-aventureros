@@ -137,10 +137,47 @@ SOLUCIÓN: El usuario no tiene permisos, verifica credenciales
 ERROR: "duplicate key value"
 SOLUCIÓN: Intentas insertar un ID que ya existe
 
+🚀 CÓMO EJECUTAR EL SCRIPT PARA CREAR TABLAS
+============================================
+
+UBICACIÓN ACTUALIZADA: El script está en app/DB/
+
+OPCIÓN 1: Script independiente (RECOMENDADO)
+-------------------------------------------
+Ejecuta desde el directorio del proyecto:
+
+```bash
+cd "blocknote/app/DB"
+python create_tables_standalone.py
+```
+
+Este script:
+✅ Funciona sin problemas de importaciones
+✅ Incluye prueba de conexión
+✅ Muestra información detallada de las tablas creadas
+
+OPCIÓN 2: Script original (requiere ajustes)
+-------------------------------------------
+Si quieres usar el script original, ejecuta desde el directorio app:
+
+```bash
+cd "blocknote/app"
+python -m DB.create_db_sqlalchemy
+```
+
+⚠️ NOTAS IMPORTANTES:
+- Asegúrate de que CockroachDB esté ejecutándose
+- Verifica que la base de datos 'DyD_notes_db' exista
+- El script mostrará información detallada de las tablas creadas
+
+🎉 RESULTADO EXITOSO:
+Verás el mensaje "✅ PROCESO COMPLETADO EXITOSAMENTE"
+y la información de la tabla 'notes' con sus columnas.
+
 🚀 PRÓXIMOS PASOS
 ================
 
-1. Crear la tabla (usando uno de los scripts)
+1. ✅ Crear la tabla (¡Ya completado!)
 2. Probar insertar datos manualmente
 3. Desarrollar la API para CRUD operations:
    - CREATE: Crear nuevas notas
