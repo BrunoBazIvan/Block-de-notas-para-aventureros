@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException, APIRouter
 from fastapi.middleware.cors import CORSMiddleware 
 from datetime import datetime 
-from app.models.note import Note, NoteCreate, NoteUpdate
+from .models.note import Note, NoteCreate, NoteUpdate
 from .service.database_service import NoteService
 
 
